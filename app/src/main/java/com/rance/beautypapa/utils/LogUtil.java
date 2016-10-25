@@ -13,8 +13,8 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by Rance
- * on 2016/10/22.
+ * 作者：Rance on 2016/10/25 15:19
+ * 邮箱：rance935@163.com
  */
 public class LogUtil {
 

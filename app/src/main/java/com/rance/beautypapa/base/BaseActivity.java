@@ -30,8 +30,8 @@ import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
 /**
- * Created by Rance
- * on 2016/10/22.
+ * 作者：Rance on 2016/10/25 15:19
+ * 邮箱：rance935@163.com
  */
 public class BaseActivity extends AppCompatActivity {
     public Activity mActivity;
@@ -122,7 +122,6 @@ public class BaseActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setDisplayShowTitleEnabled(false);
         }
         return toolbar;
     }
@@ -137,7 +136,6 @@ public class BaseActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(false);
-            actionBar.setDisplayShowTitleEnabled(false);
         }
         return toolbar;
     }

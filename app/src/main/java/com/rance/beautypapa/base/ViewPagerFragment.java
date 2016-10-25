@@ -7,13 +7,8 @@ import android.view.View;
 import com.rance.beautypapa.utils.LogUtil;
 
 /**
- * Created by dasu on 2016/9/27.
- * https://github.com/woshidasusu/Meizi
- *
- * Viewpager + Fragment情况下，fragment的生命周期因Viewpager的缓存机制而失去了具体意义
- * 该抽象类自定义一个新的回调方法，当fragment可见状态改变时会触发的回调方法，介绍看下面
- *
- * @see #onFragmentVisibleChange(boolean)
+ * 作者：Rance on 2016/10/25 15:19
+ * 邮箱：rance935@163.com
  */
 public abstract class ViewPagerFragment extends BaseFragment {
 

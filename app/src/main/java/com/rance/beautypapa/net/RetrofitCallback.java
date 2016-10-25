@@ -5,10 +5,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by Rance
- * on 2016/10/22.
+ * 作者：Rance on 2016/10/25 15:19
+ * 邮箱：rance935@163.com
  */
-
 public abstract class RetrofitCallback<M> implements Callback<M> {
 
     public abstract void onSuccess(M model);

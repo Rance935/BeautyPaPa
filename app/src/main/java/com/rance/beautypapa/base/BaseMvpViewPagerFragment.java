@@ -4,13 +4,9 @@ package com.rance.beautypapa.base;
 import android.os.Bundle;
 import android.view.View;
 
-
 /**
- * Created by WuXiaolong on 2016/3/30.
- * github:https://github.com/WuXiaolong/
- * weibo:http://weibo.com/u/2175011601
- * 微信公众号：吴小龙同学
- * 个人博客：http://wuxiaolong.me/
+ * 作者：Rance on 2016/10/25 15:19
+ * 邮箱：rance935@163.com
  */
 public abstract class BaseMvpViewPagerFragment<P extends BasePresenter> extends ViewPagerFragment {
     protected P mvpPresenter;

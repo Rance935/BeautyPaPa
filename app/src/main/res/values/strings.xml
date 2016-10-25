@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">BeautyPaPa</string>
+    <string name="app_name">爱啪啪</string>
+    <string name="action_settings">设置</string>
+    <string name="action_search">搜索</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

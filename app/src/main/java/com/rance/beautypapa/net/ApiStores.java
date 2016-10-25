@@ -10,8 +10,8 @@ import retrofit2.http.QueryMap;
 import rx.Observable;
 
 /**
- * Created by Rance
- * on 2016/10/22.
+ * 作者：Rance on 2016/10/25 15:19
+ * 邮箱：rance935@163.com
  */
 public interface ApiStores {
     //baseUrl
@@ -23,5 +23,5 @@ public interface ApiStores {
      * @return
      */
     @GET("channels_topics_timeline.json")
-    Observable<List<VideoEntity>> getVideoList(@QueryMap HashMap<String, String> map);
+    Observable<List<VideoEntity>> getVideoList(@QueryMap HashMap<String, Object> map);
 }

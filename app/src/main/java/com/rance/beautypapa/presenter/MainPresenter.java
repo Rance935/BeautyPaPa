@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by Race
- * on 2016/9/23.
+ * 作者：Rance on 2016/10/25 15:19
+ * 邮箱：rance935@163.com
  */
 public class MainPresenter extends BasePresenter<MainView> {
 
@@ -19,7 +19,7 @@ public class MainPresenter extends BasePresenter<MainView> {
         attachView(view);
     }
 
-    public void getVideoList(HashMap<String, String> map) {
+    public void getVideoList(HashMap<String, Object> map) {
         mvpView.showLoading();
         addSubscription(apiStores.getVideoList(map), new ApiCallback<List<VideoEntity>>() {
             @Override
