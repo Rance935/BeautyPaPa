@@ -3,15 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rance.beautypapa.ui.WebViewActivity">
+    tools:context=".ui.activity.WebViewActivity">
 
     <include
         android:id="@+id/webview_title"
-        layout="@layout/include_toolbar" />
+        layout="@layout/include_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <WebView
         android:id="@+id/webView"
         android:layout_below="@id/webview_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"/>
 </RelativeLayout>

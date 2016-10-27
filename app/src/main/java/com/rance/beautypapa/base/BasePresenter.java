@@ -1,7 +1,8 @@
 package com.rance.beautypapa.base;
 
-import com.rance.beautypapa.net.ApiStores;
 import com.rance.beautypapa.net.AppClient;
+import com.rance.beautypapa.net.VideoApiStores;
+import com.rance.beautypapa.net.ZhihuApiStores;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -15,12 +16,14 @@ import rx.subscriptions.CompositeSubscription;
  */
 public class BasePresenter<V> {
     public V mvpView;
-    protected ApiStores apiStores;
+    protected VideoApiStores videoapiStores;
+    protected ZhihuApiStores zhihuApiStores;
     private CompositeSubscription mCompositeSubscription;
 
     public void attachView(V mvpView) {
         this.mvpView = mvpView;
-        apiStores = AppClient.retrofit().create(ApiStores.class);
+        videoapiStores = AppClient.getVideoRetrofit().create(VideoApiStores.class);
+        zhihuApiStores = AppClient.getZhiHURetrofit().create(ZhihuApiStores.class);
     }
 
 

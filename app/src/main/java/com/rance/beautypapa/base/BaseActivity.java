@@ -9,12 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rance.beautypapa.R;
-import com.rance.beautypapa.net.ApiStores;
-import com.rance.beautypapa.net.AppClient;
 import com.rance.beautypapa.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -35,7 +32,6 @@ import rx.subscriptions.CompositeSubscription;
  */
 public class BaseActivity extends AppCompatActivity {
     public Activity mActivity;
-    public ApiStores apiStores = AppClient.retrofit().create(ApiStores.class);
     private CompositeSubscription mCompositeSubscription;
     private List<Call> calls;
 

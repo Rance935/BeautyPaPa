@@ -2,10 +2,12 @@ package com.rance.beautypapa.adapter.holder;
 
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.rance.beautypapa.R;
+import com.rance.beautypapa.base.MyApplication;
 import com.rance.beautypapa.model.VideoEntity;
 import com.rance.beautypapa.widget.CircleImageView;
 import com.squareup.picasso.Picasso;

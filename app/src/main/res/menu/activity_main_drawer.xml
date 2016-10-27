@@ -3,33 +3,26 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_video"
+            android:checkable="true"
+            android:icon="@mipmap/icon_video"
+            android:title="美拍视频" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_new"
+            android:icon="@mipmap/icon_new"
+            android:title="知乎日报" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="设置">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_about"
+                android:icon="@mipmap/icon_about"
+                android:title="关于我们" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_share"
+                android:icon="@mipmap/icon_share"
+                android:title="分享" />
         </menu>
     </item>
 

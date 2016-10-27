@@ -14,8 +14,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.MainActivity"
-            android:label="@string/title_activity_main2"
+            android:name=".ui.activity.MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +23,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.WebViewActivity" />
+        <activity
+            android:name=".ui.activity.WebViewActivity"
+            android:hardwareAccelerated="true" />
+
+        <activity android:name=".ui.activity.NewsDetailsActivity"/>
     </application>
 
 </manifest>

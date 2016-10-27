@@ -1,11 +1,10 @@
-package com.rance.beautypapa.ui;
+package com.rance.beautypapa.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import com.rance.beautypapa.adapter.VideoRecyclerAdapter;
 import com.rance.beautypapa.base.BaseMvpViewPagerFragment;
 import com.rance.beautypapa.model.VideoEntity;
 import com.rance.beautypapa.presenter.MainPresenter;
+import com.rance.beautypapa.ui.activity.WebViewActivity;
 import com.rance.beautypapa.view.MainView;
 
 import java.util.ArrayList;
@@ -75,7 +75,6 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
         mVideoRecyclerAdapter.setError(R.layout.view_error);
         mRecyclerView.setRefreshListener(this);
         mRecyclerView.setEmptyView(R.layout.view_empty);
-
         mVideoRecyclerAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
@@ -92,7 +91,7 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
         map.put("id", ids[index]);
         map.put("page", page);
         map.put("count", count);
-        if (videoEntities.size() > 0){
+        if (videoEntities.size() > 0) {
             map.put("max_id", videoEntities.get(videoEntities.size() - 1).getId());
         }
         mvpPresenter.getVideoList(map);
@@ -111,21 +110,11 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
     @Override
     public void getVideoSuccess(List<VideoEntity> videoEntity) {
         videoEntities.addAll(videoEntity);
-        mVideoRecyclerAdapter.addAll(videoEntities);
+        mVideoRecyclerAdapter.addAll(videoEntity);
     }
 
     @Override
     public void getVideoFail(String msg) {
-
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
 
     }
 
@@ -144,7 +133,7 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
 
     @Override
     public void onLoadMore() {
-        page ++;
+        page++;
         getVideoList();
     }
 }

@@ -1,14 +1,16 @@
-package com.rance.beautypapa.ui;
+package com.rance.beautypapa.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.rance.beautypapa.R;
 import com.rance.beautypapa.base.BaseActivity;
+import com.rance.beautypapa.utils.LogUtil;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -39,10 +41,7 @@ public class WebViewActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         urlPath = getIntent().getStringExtra("url");
-        //优先使用缓存
-        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        //支持JavaScript
-        webView.getSettings().setJavaScriptEnabled(true);
+        setSettings(webView.getSettings());
         webView.loadUrl(urlPath);
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -58,6 +57,27 @@ public class WebViewActivity extends BaseActivity {
                 dismissProgressDialog();
             }
         });
+        webView.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                toolbar.setTitle(title);
+                setSupportActionBar(toolbar);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            }
+        });
+    }
+
+    private void setSettings(WebSettings setting) {
+        setting.setJavaScriptEnabled(true);
+        setting.setBuiltInZoomControls(true);
+        setting.setDisplayZoomControls(false);
+        setting.setSupportZoom(true);
+
+        setting.setDomStorageEnabled(true);
+        setting.setDatabaseEnabled(true);
+        // 全屏显示
+        setting.setLoadWithOverviewMode(true);
+        setting.setUseWideViewPort(true);
     }
 
     //改写物理按键——返回的逻辑
@@ -72,5 +92,23 @@ public class WebViewActivity extends BaseActivity {
             }
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        webView.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        webView.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        webView.destroy();
     }
 }

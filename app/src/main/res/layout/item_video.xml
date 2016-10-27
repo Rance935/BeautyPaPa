@@ -12,36 +12,18 @@
         android:orientation="vertical"
         android:padding="@dimen/activity_vertical_margin">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="500dp">
-
-            <ImageView
-                android:id="@+id/item_video_cover"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY" />
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:background="@mipmap/icon_play_num" />
-        </FrameLayout>
-
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <com.rance.beautypapa.widget.CircleImageView
                 android:id="@+id/item_video_header"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 app:border_color="@color/white"
-                app:border_width="1dp"/>
+                app:border_width="1dp" />
 
             <TextView
                 android:id="@+id/item_video_name"
@@ -51,18 +33,38 @@
                 android:text="小明"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/text_subhead" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/item_video_caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
-            android:text="小明"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/text_caption" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="8dp">
 
+            <ImageView
+                android:id="@+id/item_video_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#40000000"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/item_video_caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="小明"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_caption" />
+            </LinearLayout>
+        </FrameLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,5 +104,6 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/text_caption" />
         </LinearLayout>
+
     </LinearLayout>
 </android.support.v7.widget.CardView>

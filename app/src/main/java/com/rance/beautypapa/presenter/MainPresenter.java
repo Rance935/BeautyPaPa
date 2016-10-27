@@ -21,7 +21,7 @@ public class MainPresenter extends BasePresenter<MainView> {
 
     public void getVideoList(HashMap<String, Object> map) {
         mvpView.showLoading();
-        addSubscription(apiStores.getVideoList(map), new ApiCallback<List<VideoEntity>>() {
+        addSubscription(videoapiStores.getVideoList(map), new ApiCallback<List<VideoEntity>>() {
             @Override
             public void onSuccess(List<VideoEntity> model) {
                 mvpView.getVideoSuccess(model);

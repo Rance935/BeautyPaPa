@@ -1,20 +1,17 @@
-package com.rance.beautypapa.ui;
+package com.rance.beautypapa.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.rance.beautypapa.R;
 import com.rance.beautypapa.adapter.BaseFragmentAdapter;
-import com.rance.beautypapa.base.BaseActivity;
 import com.rance.beautypapa.base.BaseFragment;
-import com.rance.beautypapa.base.ViewPagerFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +23,14 @@ import butterknife.ButterKnife;
  * 作者：Rance on 2016/10/25 15:19
  * 邮箱：rance935@163.com
  */
-public class VideoFragment extends ViewPagerFragment {
+public class VideoFragment extends BaseFragment {
 
     @Bind(R.id.tabs)
     TabLayout mTabLayout;
     @Bind(R.id.viewpager)
     ViewPager mViewPager;
 
+    private View rootView;
     List<Fragment> mFragments;
     String[] mTitles = new String[]{
             "热门", "搞笑", "逗比", "明星名人", "男神", "女神", "音乐", "舞蹈", "旅行", "美食", "美妆时尚", "涨姿势", "宝宝", "萌宠乐园", "二次元"

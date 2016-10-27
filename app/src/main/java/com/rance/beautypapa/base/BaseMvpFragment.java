@@ -27,4 +27,12 @@ public abstract class BaseMvpFragment<P extends BasePresenter> extends BaseFragm
             mvpPresenter.detachView();
         }
     }
+
+    public void showLoading() {
+        showProgressDialog();
+    }
+
+    public void hideLoading() {
+        dismissProgressDialog();
+    }
 }

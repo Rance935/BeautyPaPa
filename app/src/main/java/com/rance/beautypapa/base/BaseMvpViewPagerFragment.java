@@ -27,4 +27,12 @@ public abstract class BaseMvpViewPagerFragment<P extends BasePresenter> extends 
             mvpPresenter.detachView();
         }
     }
+
+    public void showLoading() {
+        showProgressDialog();
+    }
+
+    public void hideLoading() {
+        dismissProgressDialog();
+    }
 }

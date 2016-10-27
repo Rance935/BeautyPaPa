@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <include
-        android:id="@+id/app_bar"
         layout="@layout/include_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+        android:layout_height="wrap_content" />
 
     <android.support.v4.widget.DrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/app_bar"
-        android:fitsSystemWindows="true"
-        tools:openDrawer="start">
+        android:fitsSystemWindows="true">
+
+        <FrameLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <android.support.design.widget.NavigationView
             android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:layout_gravity="left"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/nav_header"
+            app:itemIconTint="@color/colorPrimary"
+            app:itemTextColor="@color/black"
             app:menu="@menu/activity_main_drawer" />
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/main_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </android.support.v4.view.ViewPager>
     </android.support.v4.widget.DrawerLayout>
-</RelativeLayout>
+</LinearLayout>

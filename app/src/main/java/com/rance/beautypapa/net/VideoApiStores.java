@@ -13,8 +13,8 @@ import rx.Observable;
  * 作者：Rance on 2016/10/25 15:19
  * 邮箱：rance935@163.com
  */
-public interface ApiStores {
-    //baseUrl
+public interface VideoApiStores {
+
     String API_SERVER_URL = "http://newapi.meipai.com/output/";
 
     /**
