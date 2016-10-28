@@ -1,6 +1,9 @@
 package com.rance.beautypapa.net;
 
 
+import android.text.TextUtils;
+
+import com.rance.beautypapa.base.MyApplication;
 import com.rance.beautypapa.utils.LogUtil;
 
 import retrofit2.adapter.rxjava.HttpException;
@@ -22,10 +25,11 @@ public abstract class ApiCallback<M> extends Subscriber<M> {
     @Override
     public void onError(Throwable e) {
         e.printStackTrace();
+        String msg;
         if (e instanceof HttpException) {
             HttpException httpException = (HttpException) e;
             int code = httpException.code();
-            String msg = httpException.getMessage();
+            msg = httpException.getMessage();
             LogUtil.d("code=" + code);
             if (code == 504) {
                 msg = "网络不给力";
@@ -33,9 +37,14 @@ public abstract class ApiCallback<M> extends Subscriber<M> {
             if (code == 502 || code == 404) {
                 msg = "服务器异常，请稍后再试";
             }
-            onFailure(msg);
         } else {
-            onFailure(e.getMessage());
+            msg = e.getMessage();
+        }
+        if (! MyApplication.isNetworkAvailable(MyApplication.getInstance())) {
+            msg = "请检查网络连接";
+        }
+        if (!TextUtils.isEmpty(msg)){
+            onFailure(msg);
         }
         onFinish();
     }
@@ -43,7 +52,6 @@ public abstract class ApiCallback<M> extends Subscriber<M> {
     @Override
     public void onNext(M model) {
         onSuccess(model);
-
     }
 
     @Override

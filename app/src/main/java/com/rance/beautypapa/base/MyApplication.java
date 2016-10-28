@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.DisplayMetrics;
 
 import com.rance.beautypapa.utils.LogUtil;
@@ -16,6 +18,7 @@ import java.util.Locale;
  */
 public class MyApplication extends Application {
     private static MyApplication mInstance;
+    public static Context mContext;
     /**
      * 屏幕宽度
      */
@@ -33,6 +36,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        mContext = getApplicationContext();
         mInstance = this;
         initScreenSize();
         LogUtil.init(this, true, false, 'd', "Race");
@@ -80,4 +84,14 @@ public class MyApplication extends Application {
         screenDensity = curMetrics.density;
     }
 
+    public static boolean isNetworkAvailable(Context context) {
+        if(context !=null){
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo info = cm.getActiveNetworkInfo();
+            if(info !=null){
+                return info.isAvailable();
+            }
+        }
+        return false;
+    }
 }
