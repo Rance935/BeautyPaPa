@@ -12,7 +12,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ui.activity.MainActivity"
             android:theme="@style/AppTheme">
@@ -22,12 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.activity.WebViewActivity"
             android:hardwareAccelerated="true" />
-
-        <activity android:name=".ui.activity.NewsDetailsActivity"/>
+        <activity
+            android:name=".ui.activity.NewsDetailsActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.activity.AboutActivity"></activity>
     </application>
 
 </manifest>

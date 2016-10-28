@@ -3,6 +3,7 @@ package com.rance.beautypapa.ui.activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -73,15 +74,6 @@ public class NewsDetailsActivity extends BaseMvpActivity<NewsDetailsPresenter> i
             }
         });
 
-        webView.setWebChromeClient(new WebChromeClient(){
-            @Override
-            public void onReceivedTitle(WebView view, String title) {
-                toolbar.setTitle(title);
-                setSupportActionBar(toolbar);
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            }
-        });
-
     }
 
     @Override
@@ -105,6 +97,20 @@ public class NewsDetailsActivity extends BaseMvpActivity<NewsDetailsPresenter> i
 
     @Override
     public void getNewsDetailsFail(String msg) {
+        toastShow(msg);
+    }
 
+    //改写物理按键——返回的逻辑
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (webView.canGoBack()) {
+                webView.goBack();//返回上一页面
+                return true;
+            } else {
+                finish();//退出程序
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

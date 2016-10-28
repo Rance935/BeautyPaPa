@@ -106,7 +106,7 @@ public class NewsFragment extends BaseMvpFragment<NewsPresenter> implements News
 
     @Override
     public void getNewsFail(String msg) {
-
+        toastShow(msg);
     }
 
     @Override

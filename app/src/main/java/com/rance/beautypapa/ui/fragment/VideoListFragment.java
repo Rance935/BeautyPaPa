@@ -115,7 +115,7 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
 
     @Override
     public void getVideoFail(String msg) {
-
+        toastShow(msg);
     }
 
     @Override

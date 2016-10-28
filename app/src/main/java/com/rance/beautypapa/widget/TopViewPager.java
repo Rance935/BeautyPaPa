@@ -89,7 +89,7 @@ public class TopViewPager extends RelativeLayout {
 			ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 			mImageView.setLayoutParams(layoutParams);
-			mImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+			mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 			mImageView.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {

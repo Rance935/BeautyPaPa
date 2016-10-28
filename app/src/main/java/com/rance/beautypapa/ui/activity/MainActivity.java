@@ -1,5 +1,6 @@
 package com.rance.beautypapa.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -71,12 +72,12 @@ public class MainActivity extends BaseActivity
             replaceFragment();
         } else if (id == R.id.nav_new) {
             fragment = new NewsFragment();
+            replaceFragment();
         } else if (id == R.id.nav_about) {
-
+            startActivity(new Intent(MainActivity.this, AboutActivity.class));
         } else if (id == R.id.nav_share) {
 
         }
-        replaceFragment();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

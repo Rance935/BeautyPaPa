@@ -2,11 +2,23 @@
     <string name="app_name">爱啪啪</string>
     <string name="action_settings">设置</string>
     <string name="action_search">搜索</string>
-    <string name="title_activity_main2">Main2Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="one_word">有时候啊   你总是在追赶前面的人   总是抱怨自己为什么不能再努力一点   累了你可以停下来   看看原来的自己   其实你已经很了不起了。</string>
+    <string name="desc"> * 美拍视频 取自 美拍</string>
+    <string name="desc_api_zhihu"> * 知乎日报 Api 取自 ZhihuDailyPurify</string>
+    <string name="desc_dev"> * 整体开发基于 MVP+RxJava+Retrofit+okhttp</string>
+    <string name="app_dev">开发</string>
+    <string name="desc_dev_1"> * 通过 Retrofit 实现了无网缓存</string>
+    <string name="desc_dev_2"> * 基于 MVP 模式对 Activity 和 Fragment 封装了两个基类</string>
+    <string name="desc_dev_3"> * 运用CoordinatorLayout加载了多种动画</string>
+    <string name="desc_dev_4"> * Fragment在viewpager中运用了Fragment懒加载</string>
+    <string name="app_me">关于我</string>
+    <string name="me_1"> * 三年Android开发 重庆工作</string>
+    <string name="me_2"> * 喜欢的事很多 : 唱歌，户外浪，撸代码，看动作片</string>
+    <string name="me_3"> * 喜欢玩游戏：LOL 可以联系我一起开黑 :)</string>
+    <string name="me_4"> * 最近想换工作了，有兴趣的可以联系我 :)</string>
+    <string name="app_content">联系我</string>
 </resources>

@@ -22,7 +22,7 @@
                 android:id="@+id/iv_web_img"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 app:layout_scrollFlags="scroll|enterAlways" />
 
             <android.support.v7.widget.Toolbar
@@ -31,7 +31,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="pin"
-                app:titleTextColor="@color/white" />
+                app:theme="@style/AppTheme" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
