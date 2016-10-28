@@ -200,6 +200,31 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="* QQ : "
+                            android:textSize="12sp"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/tv_qq"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="986352750"
+                            android:textSize="12sp"
+                            android:textColor="@color/colorPrimary"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="* Email : "
                             android:textSize="12sp"
                             android:paddingLeft="10dp"

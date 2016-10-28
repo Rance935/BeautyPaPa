@@ -7,7 +7,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="one_word">有时候啊   你总是在追赶前面的人   总是抱怨自己为什么不能再努力一点   累了你可以停下来   看看原来的自己   其实你已经很了不起了。</string>
-    <string name="desc"> * 美拍视频 取自 美拍</string>
+    <string name="desc"> * 美拍视频 APi 取自 美拍</string>
     <string name="desc_api_zhihu"> * 知乎日报 Api 取自 ZhihuDailyPurify</string>
     <string name="desc_dev"> * 整体开发基于 MVP+RxJava+Retrofit+okhttp</string>
     <string name="app_dev">开发</string>
