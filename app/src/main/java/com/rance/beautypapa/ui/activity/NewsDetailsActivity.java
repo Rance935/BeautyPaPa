@@ -17,6 +17,7 @@ import com.rance.beautypapa.model.NewsDetailsEntity;
 import com.rance.beautypapa.presenter.NewsDetailsPresenter;
 import com.rance.beautypapa.view.NewsDetailsView;
 import com.squareup.picasso.Picasso;
+import com.umeng.analytics.MobclickAgent;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -112,5 +113,14 @@ public class NewsDetailsActivity extends BaseMvpActivity<NewsDetailsPresenter> i
             }
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 }

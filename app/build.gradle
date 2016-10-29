@@ -35,4 +35,16 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.jude:easyrecyclerview:4.2.3'
     compile 'com.android.support:support-v4:24.2.0'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
+    compile files('libs/MobCommons-2016.1020.1028.jar')
+    compile files('libs/MobTools-2016.1020.1028.jar')
+    compile files('libs/ShareSDK-Core-2.7.8.jar')
+    compile files('libs/ShareSDK-QQ-2.7.8.jar')
+    compile files('libs/ShareSDK-QZone-2.7.8.jar')
+    compile files('libs/ShareSDK-SinaWeibo-2.7.8.jar')
+    compile files('libs/ShareSDK-Wechat-2.7.8.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.7.8.jar')
+    compile files('libs/ShareSDK-Wechat-Favorite-2.7.8.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.7.8.jar')
 }

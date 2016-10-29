@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.rance.beautypapa.R;
 import com.rance.beautypapa.adapter.BaseFragmentAdapter;
 import com.rance.beautypapa.base.BaseFragment;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +65,15 @@ public class VideoFragment extends BaseFragment {
         mViewPager.setOffscreenPageLimit(1);
         //  第三步：将ViewPager与TableLayout 绑定在一起
         mTabLayout.setupWithViewPager(mViewPager);
+    }
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("VideoFragment"); //统计页面
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("VideoFragment");
     }
 
 }

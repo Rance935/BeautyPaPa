@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.util.DisplayMetrics;
 
 import com.rance.beautypapa.utils.LogUtil;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.Locale;
 
@@ -39,6 +40,7 @@ public class MyApplication extends Application {
         mContext = getApplicationContext();
         mInstance = this;
         initScreenSize();
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
         LogUtil.init(this, true, false, 'd', "Race");
     }
 

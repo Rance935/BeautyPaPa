@@ -18,6 +18,7 @@ import com.rance.beautypapa.model.VideoEntity;
 import com.rance.beautypapa.presenter.MainPresenter;
 import com.rance.beautypapa.ui.activity.WebViewActivity;
 import com.rance.beautypapa.view.MainView;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -136,4 +137,14 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
         page++;
         getVideoList();
     }
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("VideoListFragment"); //统计页面
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("VideoListFragment");
+    }
+
 }

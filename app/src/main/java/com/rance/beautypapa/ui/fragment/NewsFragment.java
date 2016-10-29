@@ -20,6 +20,7 @@ import com.rance.beautypapa.presenter.NewsPresenter;
 import com.rance.beautypapa.ui.activity.NewsDetailsActivity;
 import com.rance.beautypapa.view.NewsView;
 import com.rance.beautypapa.widget.TopViewPager;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,5 +129,14 @@ public class NewsFragment extends BaseMvpFragment<NewsPresenter> implements News
         newsInfo = null;
         mNewsRecyclerAdapter.clear();
         mvpPresenter.getVideoList();
+    }
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("NewsFragment"); //统计页面
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("NewsFragment");
     }
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.rance.beautypapa.R;
+import com.umeng.analytics.MobclickAgent;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -46,5 +47,14 @@ public class AboutActivity extends AppCompatActivity {
                 startActivity(it2);
                 break;
         }
+    }
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 }

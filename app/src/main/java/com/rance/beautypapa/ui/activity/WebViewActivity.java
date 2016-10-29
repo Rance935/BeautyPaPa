@@ -11,6 +11,7 @@ import android.webkit.WebViewClient;
 import com.rance.beautypapa.R;
 import com.rance.beautypapa.base.BaseActivity;
 import com.rance.beautypapa.utils.LogUtil;
+import com.umeng.analytics.MobclickAgent;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -103,12 +104,15 @@ public class WebViewActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        MobclickAgent.onResume(this);
         webView.onResume();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        MobclickAgent.onPause(this);
         webView.destroy();
     }
+
 }
