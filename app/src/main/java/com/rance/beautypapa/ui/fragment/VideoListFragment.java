@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.rance.beautypapa.base.BaseMvpViewPagerFragment;
 import com.rance.beautypapa.model.VideoEntity;
 import com.rance.beautypapa.presenter.MainPresenter;
 import com.rance.beautypapa.ui.activity.WebViewActivity;
+import com.rance.beautypapa.utils.LogUtil;
 import com.rance.beautypapa.view.MainView;
 import com.umeng.analytics.MobclickAgent;
 
@@ -84,28 +86,29 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
                 getActivity().startActivity(intent);
             }
         });
-        getVideoList();
+        mRecyclerView.setRefreshing(true);
+        onRefresh();
     }
 
-    public void getVideoList() {
+    public void getVideoList(String max_id) {
         HashMap<String, Object> map = new HashMap<>();
         map.put("id", ids[index]);
         map.put("page", page);
         map.put("count", count);
-        if (videoEntities.size() > 0) {
-            map.put("max_id", videoEntities.get(videoEntities.size() - 1).getId());
+        if (!TextUtils.isEmpty(max_id)) {
+            map.put("max_id", max_id);
+        } else {
+            page = 1;
+            videoEntities.clear();
+            mVideoRecyclerAdapter.getAllData().clear();
         }
         mvpPresenter.getVideoList(map);
+        LogUtil.d(page);
     }
 
     @Override
     protected void onFragmentVisibleChange(boolean isVisible) {
         super.onFragmentVisibleChange(isVisible);
-        if (isVisible) {
-
-        } else {
-//            setRefresh(false);
-        }
     }
 
     @Override
@@ -128,14 +131,13 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
     @Override
     public void onRefresh() {
         page = 1;
-        mVideoRecyclerAdapter.clear();
-        getVideoList();
+        getVideoList(null);
     }
 
     @Override
     public void onLoadMore() {
-        page++;
-        getVideoList();
+        page ++;
+        getVideoList(videoEntities.get(videoEntities.size() - 1).getId() + "");
     }
 
     public void onResume() {
