@@ -100,7 +100,7 @@ public class VideoListFragment extends BaseMvpViewPagerFragment<MainPresenter> i
         } else {
             page = 1;
             videoEntities.clear();
-            mVideoRecyclerAdapter.getAllData().clear();
+            mVideoRecyclerAdapter.clear();
         }
         mvpPresenter.getVideoList(map);
         LogUtil.d(page);
