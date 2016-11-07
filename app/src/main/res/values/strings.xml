@@ -6,7 +6,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="one_word">有时候啊   你总是在追赶前面的人   总是抱怨自己为什么不能再努力一点   累了你可以停下来   看看原来的自己   其实你已经很了不起了。</string>
+    <string name="one_word">同大千攻城狮般无异，本狮有着巨大的火热的不灭的技术热情，痴迷于Android开发。乐于分享，善于将技术生活化，唯愿与大千男女攻城狮共同进步。</string>
     <string name="desc"> * 美拍视频 APi 取自 美拍</string>
     <string name="desc_api_zhihu"> * 知乎日报 Api 取自 ZhihuDailyPurify</string>
     <string name="desc_dev"> * 整体开发基于 MVP+RxJava+Retrofit+okhttp</string>
