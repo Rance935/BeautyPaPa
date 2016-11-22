@@ -7,14 +7,11 @@
 
     <include
         android:id="@+id/webview_title"
-        layout="@layout/include_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        layout="@layout/include_toolbar" />
 
     <WebView
         android:id="@+id/webView"
         android:layout_below="@id/webview_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"/>
+        android:layout_height="match_parent" />
 </RelativeLayout>
