@@ -1,5 +1,7 @@
 package com.rance.beautypapa.ui.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
@@ -43,21 +45,8 @@ public class WebViewActivity extends BaseActivity {
 
         urlPath = getIntent().getStringExtra("url");
         setSettings(webView.getSettings());
+//        webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl(urlPath);
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                showProgressDialog();
-                view.loadUrl(url);
-                return true;
-            }
-
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                dismissProgressDialog();
-            }
-        });
         webView.setWebChromeClient(new WebChromeClient(){
             @Override
             public void onReceivedTitle(WebView view, String title) {
